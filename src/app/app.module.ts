@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormEditComponent } from './user-form-edit/user-form-edit.component';
 import { UserFormCreateComponent } from './user-form-create/user-form-create.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UserFormCreateComponent } from './user-form-create/user-form-create.com
     FooterComponent,
     UserListComponent,
     UserFormEditComponent,
-    UserFormCreateComponent
+    UserFormCreateComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
