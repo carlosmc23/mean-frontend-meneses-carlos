@@ -12,4 +12,23 @@ export class UserService {
     this.myHttpClient = httpclient;
   }
 
+  public getUserList(): User[] {
+    let userList: User[] = [];
+
+    userList.push({
+      name: 'Carlos 0',
+      lastname: 'Beltran',
+      username: 'carlos123',
+      email: 'carlos@correo.com',
+      avatar: 'avatarCarlos'
+    });
+    userList.push({
+      name: 'Carlos 1',
+      lastname: 'Beltran',
+      username: 'carlos123',
+      email: 'carlos@correo.com',
+      avatar: 'avatarCarlos'
+    });
+    return userList;
+  }
 }
