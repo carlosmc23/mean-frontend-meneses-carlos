@@ -11,6 +11,7 @@ import { UserFormEditComponent } from './user-form-edit/user-form-edit.component
 import { UserFormCreateComponent } from './user-form-create/user-form-create.component';
 import { HomeComponent } from './home/home.component';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,11 +22,13 @@ import { UserService } from './services/user.service';
     UserListComponent,
     UserFormEditComponent,
     UserFormCreateComponent,
-    HomeComponent
+    HomeComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
