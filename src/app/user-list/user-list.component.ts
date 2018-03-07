@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/user';
 
 @Component({
   selector: 'umss-user-list',
@@ -7,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
+  usertest: User = {
+    name: 'Carlos',
+    lastname: 'Beltran',
+    username: 'carlos123',
+    email: 'carlos@correo.com',
+    avatar: 'avatarCarlos'
+  };
   constructor() { }
 
   ngOnInit() {
