@@ -10,6 +10,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormEditComponent } from './user-form-edit/user-form-edit.component';
 import { UserFormCreateComponent } from './user-form-create/user-form-create.component';
 import { HomeComponent } from './home/home.component';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
