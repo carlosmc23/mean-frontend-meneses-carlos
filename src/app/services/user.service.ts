@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { User } from '../model/user';
 
+const userApiUrl = 'http://localhost:3000/users';
+
 @Injectable()
 export class UserService {
 
@@ -11,7 +13,7 @@ export class UserService {
   constructor(httpclient: HttpClient) {
     this.myHttpClient = httpclient;
   }
-
+/*
   public getUserList(): User[] {
     let userList: User[] = [];
 
@@ -30,5 +32,8 @@ export class UserService {
       avatar: 'avatarCarlos'
     });
     return userList;
+  }*/
+  public getUserList(): Observable< any>{
+    return this.myHttpClient.get(userApiUrl);
   }
 }

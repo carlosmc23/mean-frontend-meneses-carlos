@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
 
+
 @Component({
   selector: 'umss-user-list',
   templateUrl: './user-list.component.html',
@@ -15,7 +16,14 @@ export class UserListComponent implements OnInit {
 }
 
   ngOnInit() {
-    this.userList = this.userservice.getUserList();
+  this.userservice.getUserList().subscribe(
+    (response)=>{
+      //console.log('respuesta del servidor: ', response);
+      this.userList = response.data;
+    },(error)=>{
+      console.log('error ', error);
+    }
+  );
   }
 
 }
