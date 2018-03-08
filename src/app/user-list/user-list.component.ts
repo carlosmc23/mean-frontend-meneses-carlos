@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,9 @@ export class UserListComponent implements OnInit {
 
   userList: User[] = [];
 
-  constructor( private userservice : UserService) {
+  constructor(
+    private userservice : UserService,
+    private router: Router) {
 }
 
   ngOnInit() {
@@ -24,6 +27,10 @@ export class UserListComponent implements OnInit {
       console.log('error ', error);
     }
   );
+  }
+  viewUser(userId):void{
+    //console.log('id del usuario', userId);
+    this.router.navigate(['user',userId, 'view']);
   }
 
 }

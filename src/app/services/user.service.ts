@@ -36,4 +36,7 @@ export class UserService {
   public getUserList(): Observable< any>{
     return this.myHttpClient.get(userApiUrl);
   }
+  public getUserById(userid: string): Observable<any>{
+    return this.myHttpClient.get(`${userApiUrl}/${userid}`);
+  }
 }

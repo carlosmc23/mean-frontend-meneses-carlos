@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormCreateComponent } from './user-form-create/user-form-create.component';
 import { UserFormEditComponent } from './user-form-edit/user-form-edit.component';
+import { UserViewComponent } from './user-view/user-view.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
     path:'',
     redirectTo: 'home',
     pathMatch: 'full'
+  },{
+    path:'user/:id/view',
+    component: UserViewComponent
   }
 ];
 
