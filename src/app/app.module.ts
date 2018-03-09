@@ -11,9 +11,10 @@ import { UserFormEditComponent } from './user-form-edit/user-form-edit.component
 import { UserFormCreateComponent } from './user-form-create/user-form-create.component';
 import { HomeComponent } from './home/home.component';
 import { UserService } from './services/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserViewComponent } from './user-view/user-view.component';
 import { FormsModule } from "@angular/forms";
+import { TokenInjectorService } from "./services/token-injector.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,13 @@ import { FormsModule } from "@angular/forms";
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInjectorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
