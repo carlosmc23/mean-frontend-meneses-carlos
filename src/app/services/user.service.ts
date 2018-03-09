@@ -13,30 +13,35 @@ export class UserService {
   constructor(httpclient: HttpClient) {
     this.myHttpClient = httpclient;
   }
-/*
-  public getUserList(): User[] {
-    let userList: User[] = [];
+  /*
+    public getUserList(): User[] {
+      let userList: User[] = [];
 
-    userList.push({
-      name: 'Carlos 0',
-      lastname: 'Beltran',
-      username: 'carlos123',
-      email: 'carlos@correo.com',
-      avatar: 'avatarCarlos'
-    });
-    userList.push({
-      name: 'Carlos 1',
-      lastname: 'Beltran',
-      username: 'carlos123',
-      email: 'carlos@correo.com',
-      avatar: 'avatarCarlos'
-    });
-    return userList;
-  }*/
-  public getUserList(): Observable< any>{
+      userList.push({
+        name: 'Carlos 0',
+        lastname: 'Beltran',
+        username: 'carlos123',
+        email: 'carlos@correo.com',
+        avatar: 'avatarCarlos'
+      });
+      userList.push({
+        name: 'Carlos 1',
+        lastname: 'Beltran',
+        username: 'carlos123',
+        email: 'carlos@correo.com',
+        avatar: 'avatarCarlos'
+      });
+      return userList;
+    }*/
+  public getUserList(): Observable<any> {
     return this.myHttpClient.get(userApiUrl);
   }
-  public getUserById(userid: string): Observable<any>{
+  public getUserById(userid: string): Observable<any> {
     return this.myHttpClient.get(`${userApiUrl}/${userid}`);
   }
+
+  createUser(newUser: User): Observable<any>{
+    return this.myHttpClient.post(userApiUrl, newUser);
+  }
+
 }
