@@ -15,6 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserViewComponent } from './user-view/user-view.component';
 import { FormsModule } from "@angular/forms";
 import { TokenInjectorService } from "./services/token-injector.service";
+import { UserFormLoginComponent } from './user-form-login/user-form-login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TokenInjectorService } from "./services/token-injector.service";
     UserFormCreateComponent,
     HomeComponent,
     UserViewComponent,
+    UserFormLoginComponent,
 
   ],
   imports: [
