@@ -10,12 +10,17 @@ import { Observable } from "rxjs/Observable";
 @Injectable()
 export class TokenInjectorService implements HttpInterceptor {
 
+  tokenIntercepted;
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler):Observable<HttpEvent<any>> {
-   request=request.clone({
+   if(sessionStorage.getItem('token')==null)
+   this.tokenIntercepted='faketoken';
+   else
+   this.tokenIntercepted=sessionStorage.getItem('token');
+    request=request.clone({
     setHeaders: {
-      "auth-access-token":"tokenFake"
+      "auth-access-token":this.tokenIntercepted
     }
    }
 
