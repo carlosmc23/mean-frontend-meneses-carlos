@@ -6,6 +6,7 @@ import { UserFormCreateComponent } from './user-form-create/user-form-create.com
 import { UserFormEditComponent } from './user-form-edit/user-form-edit.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { UserFormLoginComponent } from './user-form-login/user-form-login.component';
+import { UserInformationComponent } from './user-information/user-information.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path:'user/login',
     component: UserFormLoginComponent
+  },
+  {
+    path:'user/information',
+    component: UserInformationComponent
   }
 ];
 

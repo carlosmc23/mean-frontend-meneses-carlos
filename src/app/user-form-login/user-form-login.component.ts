@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../services/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'umss-user-form-login',
@@ -8,7 +9,8 @@ import { AuthService } from "../services/auth.service";
 })
 export class UserFormLoginComponent implements OnInit {
 
-  constructor(private authservice: AuthService) { }
+  constructor(private authservice: AuthService,
+  private router:Router) { }
 
 credentials={
   username:'',
@@ -24,6 +26,7 @@ login():void{
       console.log('respuesta:', response);
       sessionStorage.removeItem('token',);
       sessionStorage.setItem('token:',response.token);
+      this.router.navigate(['user','information'])
     },(error)=>{
       console.log('error:', error)
     }

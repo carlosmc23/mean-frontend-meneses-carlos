@@ -11,7 +11,8 @@ export class AuthService {
   login(credentials): Observable<any> {
     return this.httpclient.post(`${authApiUrl}/login`, credentials);
   }
-  getMyPersonalInformation() {
+  getMyPersonalInformation():Observable<any> {
+    return this.httpclient.get(`${authApiUrl}/me`)
 
   };
 }
