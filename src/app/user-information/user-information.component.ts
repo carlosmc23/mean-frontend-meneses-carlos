@@ -9,24 +9,24 @@ import { AuthService } from '../services/auth.service';
 })
 export class UserInformationComponent implements OnInit {
 
-  myUser: User={
-    name:'',
-    lastname:'',
-    username:'',
-    email:''
+  myUser: User = {
+    name: '',
+    lastname: '',
+    username: '',
+    email: ''
   }
-  constructor(private authservice:AuthService) { }
+  constructor(private authservice: AuthService) { }
 
   ngOnInit() {
     this.authservice.getMyPersonalInformation()
-    .subscribe(
-      (response)=>{
-        console.log('respuesta: ', response);
-        this.myUser=response.data;
-      },(error)=>{
-        console.log('error: ', error);
-      }
-    )
+      .subscribe(
+        (response) => {
+          //console.log('respuesta: ', response);
+          this.myUser = response.data;
+        }, (error) => {
+          console.log('error: ', error);
+        }
+      )
   }
 
 }

@@ -10,26 +10,26 @@ import { Router } from "@angular/router";
 export class UserFormLoginComponent implements OnInit {
 
   constructor(private authservice: AuthService,
-  private router:Router) { }
+    private router: Router) { }
 
-credentials={
-  username:'',
-  password:''
-}
+  credentials = {
+    username: '',
+    password: ''
+  };
 
   ngOnInit() {
   }
-login():void{
-  this.authservice.login(this.credentials)
-  .subscribe(
-    (response)=>{
-      console.log('respuesta:', response);
-      sessionStorage.removeItem('token',);
-      sessionStorage.setItem('token:',response.token);
-      this.router.navigate(['user','information'])
-    },(error)=>{
-      console.log('error:', error)
-    }
-  );
-}
+  login(): void {
+    this.authservice.login(this.credentials)
+      .subscribe(
+        (response) => {
+          //console.log('respuesta:', response);
+          sessionStorage.removeItem('token');
+          sessionStorage.setItem('token', response.token);
+          this.router.navigate(['user', 'information']);
+        }, (error) => {
+          console.log('error:', error);
+        }
+      );
+  }
 }

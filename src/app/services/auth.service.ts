@@ -8,10 +8,12 @@ const authApiUrl = 'http://localhost:3000/auth';
 export class AuthService {
 
   constructor(private httpclient: HttpClient) { }
+
   login(credentials): Observable<any> {
     return this.httpclient.post(`${authApiUrl}/login`, credentials);
   }
-  getMyPersonalInformation():Observable<any> {
+
+  getMyPersonalInformation(): Observable<any> {
     return this.httpclient.get(`${authApiUrl}/me`)
 
   };

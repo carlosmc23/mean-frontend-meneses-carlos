@@ -10,10 +10,6 @@ import { UserService } from "../services/user.service";
 })
 export class UserViewComponent implements OnInit {
 
-  constructor(
-    private activateroute: ActivatedRoute,
-    private userservice: UserService
-  ) { }
   userid: string;
   userViewed: User = {
     name: '',
@@ -22,21 +18,29 @@ export class UserViewComponent implements OnInit {
     email: '',
     avatar: ''
   };
+  constructor(
+    private activateroute: ActivatedRoute,
+    private userservice: UserService
+  ) { }
+
+
   ngOnInit() {
-    this.activateroute.params.subscribe(
-      (paramss) => {
-        //console.log('parametros resibidos', paramss.id);
-        this.userid = paramss.id;
-        this.userservice.getUserById(this.userid).subscribe(
-          (response) => {
-            console.log('respuesta del servidor', response);
-            this.userViewed = response.data;
-          }, (error) => {
-            console.log('error del servidor', error);
-          }
-        )
-      }
-    )
+    this.activateroute.params
+      .subscribe(
+        (paramss) => {
+          //console.log('parametros resibidos', paramss.id);
+          this.userid = paramss.id;
+          this.userservice.getUserById(this.userid)
+            .subscribe(
+              (response) => {
+                console.log('respuesta del servidor', response);
+                this.userViewed = response.data;
+              }, (error) => {
+                console.log('error del servidor', error);
+              }
+            );
+        }
+      )
   }
 }
 
