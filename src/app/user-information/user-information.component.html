@@ -6,4 +6,5 @@
   <b>User Name:</b>{{myUser.username}}</p>
 <p>
   <b>Email:</b>{{myUser.email}}</p>
-  <img [src]="myUser.avatar" *ngIf="myUser.avatar != null">
+<img [src]="myUser.avatar" *ngIf="myUser.avatar != null"><br><br>
+<button (click)='logout()'> Log Out</button>

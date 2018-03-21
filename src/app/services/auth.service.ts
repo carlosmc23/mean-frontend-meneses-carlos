@@ -17,4 +17,7 @@ export class AuthService {
     return this.httpclient.get(`${authApiUrl}/me`)
 
   };
+  logout():Observable<any>{
+    return this.httpclient.get(`${authApiUrl}/logout`);
+  }
 }

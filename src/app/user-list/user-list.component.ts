@@ -28,8 +28,11 @@ export class UserListComponent implements OnInit {
       }
     );
   }
-  viewUser(userId): void {
-    this.router.navigate(['user', userId, 'view']);
+  viewUser(viewUserId): void {
+    this.router.navigate(['user', viewUserId, 'view']);
+  }
+  editUser(editUserId):void{
+    this.router.navigate(['user',editUserId,'edit']);
   }
   deleteUser(userIdDel: string, userName:string, userLastName:string): void {
     let confirmar = confirm('esta seguro de eliminar al ususario '+userName+' '+userLastName);

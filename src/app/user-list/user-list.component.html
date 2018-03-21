@@ -19,7 +19,7 @@
   <div class="detail-user">{{user.lastname}}</div>
   <div class="detail-user">{{user.username}}</div>
   <div class="detail-user">
-    <button >Edit</button>
+    <button (click)="editUser(user._id)">Edit</button>
     <button (click)="viewUser(user._id)">View</button>
     <button (click)="deleteUser(user._id, user.name, user.lastname )">Delete</button>
 
