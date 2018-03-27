@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'umss-user-form-create',
@@ -16,7 +17,10 @@ export class UserFormCreateComponent implements OnInit {
     username: ''
   }
 
-  constructor(private userservice: UserService) { }
+  constructor(
+    private userservice: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
 
@@ -27,6 +31,9 @@ export class UserFormCreateComponent implements OnInit {
       .subscribe(
         (response) => {
           console.log('respuesta del servidor', response);
+          alert('el usuario fue creado correctanente');
+          this.router.navigate(['/user/list']);
+
         }, (error) => {
           console.log('error : ', error)
         }

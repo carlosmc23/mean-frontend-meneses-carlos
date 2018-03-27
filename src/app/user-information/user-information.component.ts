@@ -39,6 +39,7 @@ export class UserInformationComponent implements OnInit {
     .subscribe(
       (response)=>{
         sessionStorage.removeItem('token');
+        console.log('respuesta del servidor', response);
         alert('la session a terminado');
           this.router.navigate(['home'])
       },(error)=>{

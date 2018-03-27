@@ -23,7 +23,7 @@ export class UserFormLoginComponent implements OnInit {
     this.authservice.login(this.credentials)
       .subscribe(
         (response) => {
-          //console.log('respuesta:', response);
+          console.log('respuesta:', response);
           sessionStorage.removeItem('token');
           sessionStorage.setItem('token', response.token);
           this.router.navigate(['user', 'information']);
