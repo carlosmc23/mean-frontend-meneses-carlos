@@ -1,0 +1,18 @@
+.detail-article{
+  float: left;
+  width: 15%;
+  outline: black solid thin;
+}
+.detail-userData{
+  float: left;
+  width: 30%;
+
+}
+
+.title{
+  text-align: center
+}
+
+.clean{
+  clear: both
+}

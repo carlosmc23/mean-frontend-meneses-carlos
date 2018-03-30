@@ -1,3 +1,40 @@
-<p>
-  article-view works!
-</p>
+<h1 class="title"><p> {{articleViewed.title}} </p></h1>
+
+<table class="detail-userData">
+  <tr>
+
+    <td><p><img class="" width="150" height="150" [src]="articleViewed.author.avatar"></p></td>
+    <td><p><b>Name:</b> {{articleViewed.author.name}} </p>
+      <p><b>Last Name:</b> {{articleViewed.author.lastname}} </p>
+      <p><b>User Name:</b> {{articleViewed.author.username}} </p>
+      </td>
+  </tr>
+</table>
+<div class="clean"></div>
+
+<div>
+  <h2><b>Content:</b></h2>
+  <p> {{articleViewed.content}} </p>
+</div>
+
+<h3>Comments</h3>
+<div *ngFor="let comment of articleViewed.comments">
+
+<table class="">
+  <tr>
+    <td>
+      <img class="" width="50" height="50" [src]="comment.author.avatar">
+    </td>
+    <td><p> {{comment.author.username}} - {{comment.author.name}} {{comment.author.lastname}} </p>
+        <p>{{comment.content}} </p>
+    </td>
+  </tr>
+</table>
+<div class="clean"></div>
+
+</div>
+<div class="clean"></div>
+
+
+
+<button href [routerLink]= "'/article/list'">Volver</button>

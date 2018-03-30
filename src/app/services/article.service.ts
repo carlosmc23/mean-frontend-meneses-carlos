@@ -16,4 +16,7 @@ export class ArticleService {
   getArticleList():Observable<any>{
     return this.myhttpclient.get(articleApiUrl);
   }
+  getArticleById(articleid: string): Observable<any> {
+    return this.myhttpclient.get(`${articleApiUrl}/${articleid}`);
+  }
 }
