@@ -18,6 +18,9 @@ import { TokenInjectorService } from "./services/token-injector.service";
 import { UserFormLoginComponent } from './user-form-login/user-form-login.component';
 import { AuthService } from "./services/auth.service";
 import { UserInformationComponent } from './user-information/user-information.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { ArticleService } from './services/article.service';
+import { ArticleViewComponent } from './article-view/article-view.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import { UserInformationComponent } from './user-information/user-information.co
     UserViewComponent,
     UserFormLoginComponent,
     UserInformationComponent,
+    ArticleListComponent,
+    ArticleViewComponent,
 
   ],
   imports: [
@@ -45,7 +50,7 @@ import { UserInformationComponent } from './user-information/user-information.co
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInjectorService,
       multi: true
-    }, AuthService],
+    }, AuthService, ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

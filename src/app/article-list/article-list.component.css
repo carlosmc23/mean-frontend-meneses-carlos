@@ -1,0 +1,8 @@
+.detail-article{
+  float: left;
+  width: 15%;
+  outline: black solid thin;
+}
+.clean{
+  clear: both
+}

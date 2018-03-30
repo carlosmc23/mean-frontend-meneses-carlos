@@ -1,0 +1,26 @@
+<h1>ARTICLE LIST</h1>
+<div>
+  <div class="detail-article">
+    <B>Title</B>
+  </div>
+  <div class="detail-article">
+    <B>Author</B>
+  </div>
+  <div class="detail-article">
+    <B>Username</B>
+  </div>
+  <div class="detail-article">
+    <B>Options By article</B>
+  </div>
+  <div class="clean"></div>
+</div>
+<div *ngFor="let article of articleList">
+  <div class="detail-article">{{article.title}}</div>
+  <div class="detail-article">{{article.author.name}}</div>
+  <div class="detail-article">{{article.author.username}}</div>
+  <div class="detail-article">
+    <button (click)="viewArticle(article._id)">View Article</button>
+
+  </div>
+  <div class="clean"></div>
+</div>
