@@ -9,47 +9,43 @@ import { UserFormLoginComponent } from './user-form-login/user-form-login.compon
 import { UserInformationComponent } from './user-information/user-information.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleViewComponent } from './article-view/article-view.component';
+import { ArticleFormCreateComponent } from './article-form-create/article-form-create.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
+  },{
     path: 'user/list',
     component: UserListComponent
-  },
-  {
+  },{
     path: 'user/create',
     component: UserFormCreateComponent
-  },
-  {
+  },{
     path: 'user/:id/edit',
     component: UserFormEditComponent
-  },
-  {
+  },{
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  }, {
+  },{
     path: 'user/:id/view',
     component: UserViewComponent
-  },
-  {
+  },{
     path: 'user/login',
     component: UserFormLoginComponent
-  },
-  {
+  },{
     path: 'user/information',
     component: UserInformationComponent
-  },
-  {
+  },{
     path: 'article/list',
     component: ArticleListComponent
-  },
-  {
+  },{
     path: 'article/:id/view',
     component: ArticleViewComponent
+  },{
+    path: 'article/create',
+    component: ArticleFormCreateComponent
   }
 ];
 

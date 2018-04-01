@@ -19,4 +19,7 @@ export class ArticleService {
   getArticleById(articleid: string): Observable<any> {
     return this.myhttpclient.get(`${articleApiUrl}/${articleid}`);
   }
+  createArticle(newArticle: Article): Observable<any>{
+    return this.myhttpclient.post(articleApiUrl, newArticle);
+    }
 }

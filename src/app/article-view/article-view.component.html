@@ -3,7 +3,7 @@
 <table class="detail-userData">
   <tr>
 
-    <td><p><img class="" width="150" height="150" [src]="articleViewed.author.avatar"></p></td>
+    <td><img width="150" height="150" [src]="articleViewed.author.avatar"></td>
     <td><p><b>Name:</b> {{articleViewed.author.name}} </p>
       <p><b>Last Name:</b> {{articleViewed.author.lastname}} </p>
       <p><b>User Name:</b> {{articleViewed.author.username}} </p>
@@ -32,6 +32,10 @@
 </table>
 <div class="clean"></div>
 
+</div>
+<div>
+<textarea id="" cols="80" rows="2" [(ngModel)]="commentToCreate.comment.content"></textarea>
+<button (click)= 'createNewComment()'>Comment</button>
 </div>
 <div class="clean"></div>
 

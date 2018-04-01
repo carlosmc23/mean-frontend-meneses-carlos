@@ -21,6 +21,8 @@ import { UserInformationComponent } from './user-information/user-information.co
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleService } from './services/article.service';
 import { ArticleViewComponent } from './article-view/article-view.component';
+import { ArticleFormCreateComponent } from './article-form-create/article-form-create.component';
+import { CommentService } from './services/comment.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { ArticleViewComponent } from './article-view/article-view.component';
     UserInformationComponent,
     ArticleListComponent,
     ArticleViewComponent,
+    ArticleFormCreateComponent,
 
   ],
   imports: [
@@ -50,7 +53,7 @@ import { ArticleViewComponent } from './article-view/article-view.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInjectorService,
       multi: true
-    }, AuthService, ArticleService],
+    }, AuthService, ArticleService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

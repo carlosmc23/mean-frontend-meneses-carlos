@@ -1,0 +1,15 @@
+<h1>CREATE ARTICLE</h1>
+<div>
+  <label>Title: </label>
+  <input type="text" [(ngModel)]="articleToCreate.title"><br><br>
+</div>
+<div>
+  <label>Content: </label><br>
+  <textarea name="content" id="" cols="80" rows="5" [(ngModel)]="articleToCreate.content" >
+    Escribe aca el contenido de tu articulo</textarea><br><br>
+</div>
+<br>
+<div class="button">
+    <button href [routerLink]= "'/article/list'">Cancel</button>
+  <button (click)= 'createNewarticle()'>Create a article</button>
+</div>
