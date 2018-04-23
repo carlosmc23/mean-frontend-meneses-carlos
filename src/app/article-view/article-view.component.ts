@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../model/article';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../services/article.service';
 import { articleToComment } from '../model/comment';
 import { CommentService } from '../services/comment.service';
@@ -13,7 +13,6 @@ import { CommentService } from '../services/comment.service';
 })
 export class ArticleViewComponent implements OnInit {
 
-
   articleId: string;
   articleViewed: Article = {
     _id: '',
@@ -22,17 +21,12 @@ export class ArticleViewComponent implements OnInit {
     author: '',
     comments: ''
   };
-
-
-
-
   constructor(
     private activateroute: ActivatedRoute,
     private articleservice: ArticleService,
-    private commentservice: CommentService
+    private commentservice: CommentService,
+    private router: Router
   ) { }
-
-
   ngOnInit() {
     this.activateroute.params
       .subscribe(
@@ -59,21 +53,27 @@ export class ArticleViewComponent implements OnInit {
       author: ''
     }
   };
-
   createNewComment(): void {
     this.commentToCreate.articleid = this.articleViewed._id;
-    console.log('id del articulo a comentar: ', this.commentToCreate.articleid);
-    console.log('contenido del comentario: ', this.commentToCreate.comment.content);
-        this.commentservice.createComment(this.commentToCreate)
+    //console.log('id del articulo a comentar: ', this.commentToCreate.articleid);
+    //console.log('contenido del comentario: ', this.commentToCreate.comment.content);
+    //console.log('contenido del comentario: ', this.commentToCreate);
+    this.commentservice.createComment(this.commentToCreate)
       .subscribe(
         (response) => {
           console.log('respuesta del servidor: ', response);
           alert('el comentario fue insertado correctamente');
           location.reload();
-          //this.router.navigate(['article/list'])
+          //this.router.navigate(['article',this.articleViewed._id,'view'])
         }, (error) => {
           console.log('error: ', error)
         }
       )
+  }
+  deleteComment():void{
+
+  }
+  updateComment():void{
+
   }
 }

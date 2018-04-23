@@ -28,7 +28,9 @@ export class UserInformationComponent implements OnInit {
           //console.log('respuesta: ', response);
           this.myUser = response.data;
         }, (error) => {
-          console.log('error: ', error);
+          //console.log('error: ', error);
+          alert("No existe ningun usuario logueado");
+          this.router.navigate(['home']);
         }
       )
   }

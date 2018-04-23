@@ -9,7 +9,8 @@
     <button href [routerLink]= "'/user/login'">Login</button>
   </span>
  </div>
- <div>
+ <!-- <div *ngIf="sessionStorage.getItem('token') != null"> -->
+   <div>
   <span>
     <button href [routerLink]= "'/user/list'">User List</button>
   </span>
